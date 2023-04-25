@@ -5,7 +5,7 @@ using System.Data;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Web.Http;
-using WebService.DAL;
+using WebService.DataController;
 using WebService.Models;
 
 namespace WebService.Controllers
@@ -18,9 +18,9 @@ namespace WebService.Controllers
         {
             try
             {
-                StudentDAO studentDAO = new StudentDAOImpl();
+                StudentDataController studentDataController = new StudentDataControllerImpl();
 
-                return studentDAO.getAllStudentList();
+                return studentDataController.GetAllStudentList();
 
             }
             catch (Exception exp)
